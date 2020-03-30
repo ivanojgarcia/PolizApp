@@ -1,0 +1,29 @@
+   type Query {
+       getPolicy: PolicyAccount
+       getCostByEmployee : PolicyCost
+    }
+
+    type PolicyAccount {
+        message: String
+        policy: Policy     
+    }
+
+    type Worker {
+        age: Int
+        childs: Int
+        coverageHealth: Float
+        coverageDental: Float
+    }
+
+    type Policy {
+        workers: [Worker]
+        has_dental_care: Boolean
+        company_percentage: Int
+    }
+
+    type PolicyCost {
+        percentage: Int
+        isDental: Boolean
+        withPolicy: [Worker]
+        withoutPolicy: [Worker]
+    }
